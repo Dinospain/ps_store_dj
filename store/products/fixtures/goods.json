@@ -1,0 +1,28 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "’уди черного цвета с монограммами adidas Originals",
+      "image": "products_images/Adidas-hoodie.png",
+      "description": "",
+      "short_description": "ћ€гка€ ткань дл€ свитшотов. —тиль и комфорт Ц это образ жизни.",
+      "price": "6090.00",
+      "quantity": 15,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "—ин€€ куртка The North Face",
+      "image": "products_images/Blue-jacket-The-North-Face.png",
+      "description": "",
+      "short_description": "√ладка€ ткань. ¬одонепроницаемое покрытие. Ћегкий и теплый пухов",
+      "price": "23725.00",
+      "quantity": 7,
+      "category": 1
+    }
+  }
+]
