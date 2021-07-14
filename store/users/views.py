@@ -39,17 +39,24 @@ def register(request):
 
 
 def profile(request):
-    user=request.user
+    user = request.user
     if request.method == 'POST':
         form = UserProfileForm(data=request.POST, files=request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('users:profile'))
-    form = UserProfileForm(instance=user)
+    else:
+        form = UserProfileForm(instance=user)
+    baskets = Basket.objects.filter(user=user)
+    total_quantity = sum(basket.quantity for basket in baskets)
+    total_sum = sum(basket.sum() for basket in baskets)
+
     context = {
         'form': form,
         'title': 'Store - личный кабинет',
-        'baskets': Basket.objects.filter(user=user),
+        'baskets': baskets,
+        'total_quantity': total_quantity,
+        'total_sum': total_sum,
     }
     return render(request, 'users/profile.html', context)
 
